@@ -1,4 +1,4 @@
-- name: setup mongodb
+- name: setup mongodb server
   hosts: local
   becomes: yes
   tasks:
