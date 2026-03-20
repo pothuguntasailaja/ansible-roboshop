@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-    ami_id:
-    sg_id:  # Replace with your SG ID
-    zone_id: # Replace with your ID
+    ami_id: ami-0220d79f3f480ecf5
+    sg_id:  sg-047f642404153e5df # Replace with your SG ID
+    zone_id: Z053696412VIZBW5HM6XW # Replace with your ID
     domain_name: "daws86s.bond"
     instance: 
     - mongodb
