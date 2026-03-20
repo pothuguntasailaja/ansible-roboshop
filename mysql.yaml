@@ -1,4 +1,4 @@
-- name: setup mysql server
+- name: setup mysql-server
   local: mysql
   become: yes
   tasks:
