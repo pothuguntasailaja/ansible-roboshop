@@ -8,8 +8,7 @@
     domain_name: "daws86s.bond"
     # we can pass instances through command line using -e
     instance: 
-      - catalogue
-    # - mongodb
+    - mongodb
     # - redis
     # - mysql
     # - rabbitmq
