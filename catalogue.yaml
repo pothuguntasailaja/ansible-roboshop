@@ -60,8 +60,8 @@
       state: present
 
   - name: connect to mongodb catalogue
-     ansible.builtin.command: mongosh mongodb.daws86s.bond --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
-     register: catalogue_output
+    ansible.builtin.command: mongosh mongodb.daws86s.bond --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+    register: catalogue_output
 
   # - name: evaluate catalogue database
   #   community.mongodb.mongodb_shell:
