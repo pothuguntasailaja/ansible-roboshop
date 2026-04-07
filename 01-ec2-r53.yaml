@@ -7,11 +7,11 @@
     zone_id: Z053696412VIZBW5HM6XW # Replace with your ID
     domain_name: "daws86s.bond"
     # we can pass instances through command line using -e
-    instance: 
-      - mongodb
-      - redis
-      - mysql
-      - rabbitmq
+    # instance: 
+    #   - mongodb
+    #   - redis
+    #   - mysql
+    #   - rabbitmq
   tasks:
   - name: Create ec2 instances
     amazon.aws.ec2_instance:
