@@ -33,20 +33,20 @@
       state: directory
       path: /app
 
-  - name: Delete cart file
+  - name: Delete user file
     ansible.builtin.file:
-      path: /tmp/catalogue.zip
+      path: /tmp/user.zip
       state: absent
           
 
-  - name: download cart application
+  - name: download user application
     ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
-      dest: /tmp/cart.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
+      dest: /tmp/user.zip
 
-  - name: extract cart application
+  - name: extract user application
     ansible.builtin.unarchive:
-      src: /tmp/cart.zip
+      src: /tmp/user.zip
       dest: /app       
       remote_src: yes
 
@@ -54,15 +54,15 @@
     community.general.npm:
       path: /app
 
-  - name: copy cart service
+  - name: copy user service
     ansible.builtin.copy:
-      src: cart.service
-      dest: /etc/systemd/system/cart.service
+      src: user.service
+      dest: /etc/systemd/system/user.service
 
 
-  - name: start and enable cart
+  - name: start and enable user
     ansible.builtin.service:
-      name: cart
+      name: user
       enabled: yes
       state: started
       daemon_reload: true
