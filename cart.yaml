@@ -14,7 +14,7 @@
       name: nodejs
       state: present
 
-  - name: create roboshop  
+  - name: create roboshop  system cart
     ansible.builtin.cart:
       name: roboshop
       comment: roboshop system cart
@@ -35,18 +35,18 @@
 
   - name: Delete cart file
     ansible.builtin.file:
-      path: /tmp/user.zip
+      path: /tmp/cart.zip
       state: absent
           
 
   - name: download cart application
     ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip
-      dest: /tmp/user.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/cart-v3.zip
+      dest: /tmp/cart.zip
 
   - name: extract cart application
     ansible.builtin.unarchive:
-      src: /tmp/user.zip
+      src: /tmp/cart.zip
       dest: /app       
       remote_src: yes
 
@@ -57,7 +57,7 @@
   - name: copy cart service
     ansible.builtin.copy:
       src: user.service
-      dest: /etc/systemd/system/user.service
+      dest: /etc/systemd/system/cart.service
 
 
   - name: start and enable cart
