@@ -71,7 +71,7 @@
       name:  mongodb-mongosh
       state: present
 
-  - name: connect to mongodb catalogue
+  - name: connect to mongodb catalogue   # not working here
     ansible.builtin.command: mongosh mongodb.daws86s.bond --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
     register: catalogue_output
 
@@ -87,9 +87,9 @@
   #     msg: "{{ catalogue_output }}"
 
 
-  # - name: load products into mongodb
-  #   ansible.builtin.shell: mongosh --host mongodb.daws86s.bond </app/db/master-data.js 
-  #   when: catalogue_output.stdout | int  < 0
+  - name: load products into mongodb
+    ansible.builtin.shell: mongosh --host mongodb.daws86s.bond </app/db/master-data.js 
+    when: catalogue_output.stdout | int  < 0
 
   # - name: start and enable catalogue
   #   ansible.builtin.service:
