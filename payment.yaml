@@ -12,13 +12,13 @@
     - python3-devel
     - python3-pip
 
-    - name: create roboshop  system user
-      ansible.builtin.user:
-        name: roboshop
-        comment: roboshop system user
-        system: true
-        shell: /sbin/nologin
-        home: /app
+  - name: create roboshop  system user
+    ansible.builtin.user:
+      name: roboshop
+      comment: roboshop system user
+      system: true
+      shell: /sbin/nologin
+      home: /app
 
 # safe to remove directory, because 2nd time if we run it will download freshly. no error if does
   - name: remove app directory 
