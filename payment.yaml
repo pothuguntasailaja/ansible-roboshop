@@ -38,7 +38,7 @@
 
   - name: download payment application
     ansible.builtin.get_url:
-      url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip
+      url: https://roboshop-artifacts.s3.amazonaws.com/payment-v3.zip
       dest: /tmp/payment.zip
 
   - name: extract payment application
@@ -51,7 +51,7 @@
   - name: install dependencies
     ansible.builtin.pip:
       requirements: requirements.txt
-      executable: 3.9
+      executable: pip3.9
     args:
       chdir: /app
 
