@@ -64,7 +64,7 @@
        chdir: /app
     
   - name: move jar file
-    ansible.builtin.file: mv target/shipping-1.0.jar shipping.jar
+    ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
 
 
   - name: copy shipping service
